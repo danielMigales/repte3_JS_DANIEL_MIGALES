@@ -34,6 +34,25 @@ tingui que fer clic).*/
 
 //Aixo ja l'he fet a l'html amb <input id="quantitat" autofocus /> o amb el document.getElementById("quantitat").focus();
 
+/*4. L’operació es realitza tant fent clic al <BUTTON>, com prement la tecla ENTER del teclat.*/
+
+/*5. Si no s'escriu res a l’ <INPUT> i es prem el <BUTTON> (o la tecla ENTER ) es calcula per defecte
+l'IVA de 0€.*/
+
+/*6. En fer clic sobre el segon <DIV> (el del resum on figuren totes les quantitats escrites fins al
+	moment):
+	a) Es buiden tots els <DIVs>.
+	b) Es buida l’ <INPUT>.
+	c) Es reinicia la suma de productes (tot torna a estar igual que al principi).
+	Bonus Track: Opció Extra no obligatòria (per pujar nota).
+	En realitzar algunes sumes amb nombres decimals, el resultat mostra més decimals dels
+	necessaris. Així, si per exemple calcules l'IVA de 99€, en comptes de mostrar 119.79, javaScript
+	mostra 119.78999999999999.
+	Soluciona aquest problema utilitzant alguna de les solucions proposades en els vídeos del PLA
+	o de creació pròpia.
+	Pots provar calculant quantitats com 99 , 101 o 304 entre d'altres.*/
+
+
 
 window.onload = inici;
 
@@ -44,6 +63,8 @@ function inici() { //a dins d'aquesta funcion coloco l'event onclik als botons i
 	document.getElementById("quantitat").value;
 	document.getElementById("quantitat").focus();
 	document.getElementById("netejar").onclick = netejarInput;
+	document.getElementById("quantitat").onkeydown = enter;
+	document.getElementById("caixa2").onclick = netejarTot;
 }
 
 
@@ -52,6 +73,7 @@ var preuTotal = 0; //aquesta variable la poso fora de tot per fer-la global i po
 function iniciarCompra() { //en aquesta funció es fan els ompliments de les tres caixes
 
 	var quantitat = document.getElementById("quantitat").value;
+	quantitat = (quantitat != "") ? quantitat : 0; //amb aquesta linea si el input esta en blanc agafa valor 0
 	var totalIVA = calcularIVA(quantitat, IVA);
 	document.getElementById("caixa1").innerHTML += `l'IVA de ${quantitat} € és ${totalIVA} €.<br>`;
 
@@ -82,6 +104,20 @@ function netejarInput() {
 	document.getElementById("quantitat").value = " ";
 }
 
+function enter(e) { //funció per que quan prengui enter
+	var codi_tecla = e.keyCode;
+	if (codi_tecla == 13) {
+		iniciarCompra();
+	}
+}
+function netejarTot() {
+	document.getElementById("caixa1").innerHTML = ""
+	document.getElementById("caixa2").innerHTML = ""
+	document.getElementById("caixa3").innerHTML = ""
+	netejarInput();
+}
 
 
-/*4. L’operació es realitza tant fent clic al <BUTTON>, com prement la tecla ENTER del teclat.*/
+
+
+

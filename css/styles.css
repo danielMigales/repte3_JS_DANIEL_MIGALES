@@ -40,6 +40,7 @@
     background-color: #3498db;
     grid-column: 3 / 3;
     grid-row: 1;
+    cursor: pointer;
 }
 
 #netejar {
@@ -50,6 +51,7 @@
     background-color: red;
     grid-column: 3/3;
     grid-row: 2;
+    cursor: pointer;
 }
 
 #caixa1 {
@@ -64,6 +66,7 @@
     color: yellow;
     text-align: center;
     font-size: xx-large;
+    cursor: pointer;
 }
 
 #caixa3 {
