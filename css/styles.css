@@ -1,0 +1,104 @@
+.container {
+    background-color: wheat;
+    color: #ffffff;
+    margin: 5vw;
+    width: 50vw;
+    height: 600px;
+    border: black dotted;
+    border-radius: 30px;
+    overflow: auto;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#quantitat {
+    height: 4vw;
+    width: 20vw;
+    border-radius: 50px;
+    background-color: #def;
+    margin: 30px;
+    font-size: xx-large;
+    padding-left: 15px;
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+
+#calcular {
+    width: 15vw;
+    height: 4vw;
+    border-radius: 50px;
+    color: white;
+    font-family: 'Rubik One', sans-serif;
+    background-color: #3498db;
+    grid-column: 3 / 3;
+    grid-row: 1;
+}
+
+#netejar {
+    width: 15vw;
+    height: 4vw;
+    border-radius: 50px;
+    color: yellow;
+    background-color: red;
+    grid-column: 3/3;
+    grid-row: 2;
+}
+
+#caixa1 {
+    background-color: #def;
+    color: black;
+    text-align: center;
+    font-size: xx-large;
+}
+
+#caixa2 {
+    background-color: blue;
+    color: yellow;
+    text-align: center;
+    font-size: xx-large;
+}
+
+#caixa3 {
+    background-color: red;
+    color: white;
+    font-size: xx-large;
+    width: 100%;
+    text-align: center;
+}
+
+/* Barra de scroll para cuando escribimos muchas calculos*/
+
+.container::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.container::-webkit-scrollbar:vertical {
+    width: 20px;
+}
+
+.container::-webkit-scrollbar-button:increment,
+.contenedor::-webkit-scrollbar-button {
+    display: none;
+}
+
+.contenedor::-webkit-scrollbar:horizontal {
+    height: 1px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: blueviolet;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.container::-webkit-scrollbar-track {
+    border-radius: 5px;
+}
