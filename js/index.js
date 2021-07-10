@@ -115,6 +115,7 @@ function netejarTot() {
 	document.getElementById("caixa2").innerHTML = ""
 	document.getElementById("caixa3").innerHTML = ""
 	netejarInput();
+	preuTotal = 0;
 }
 
 
